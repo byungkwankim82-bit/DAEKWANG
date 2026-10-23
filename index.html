@@ -211,13 +211,15 @@ html:not(.en) .part figcaption span { display: none; }
 
 /* contact */
 .contact { background: var(--steel-bg, #1d2830); color: #e9eef1; }
-.contact .wrap { padding-block: clamp(56px, 8vw, 96px); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; }
+.contact .wrap { padding-block: clamp(56px, 8vw, 96px); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+/* line the address up with the first line of the heading (eyebrow + gap above it) */
+.contact .wrap > dl { margin-top: calc(32px + (clamp(24px, 3vw, 34px) * 1.25 - 24px) / 2); }
 .contact h2 { font-size: clamp(24px, 3vw, 34px); font-weight: 800; word-break: keep-all; }
 .contact .eyebrow { color: #ffb48a; }
 .contact dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; margin: 0; font-size: 15px; }
 .contact dt { color: #9fb0bb; font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; padding-top: 3px; }
 .contact dd { margin: 0; user-select: all; }
-@media (max-width: 760px) { .contact .wrap { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .contact .wrap { grid-template-columns: 1fr; } .contact .wrap > dl { margin-top: 0; } }
 footer { background: #151d23; color: #8c9ba5; font-size: 13px; }
 footer .wrap { padding-block: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
 
